@@ -1,0 +1,70 @@
+<html>
+    <title>FalixNodes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/76c26bec94.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <body>
+
+        <div class="splashiOS">
+            <img src="https://raw.githubusercontent.com/FalixNodes-Software/FalixNodes-Software/master/Icon.png">
+            <i class="fa fa-circle-o-notch"></i>
+          </div>
+
+        <div class="tabs">
+            <button class="tablink" onclick="openPage('Home', this, '#1F1F1F')" id="defaultOpen">FalixNodes</button>
+            <button class="tablink" onclick="openPage('Client', this, '#1F1F1F')">Client</button>
+            <button class="tablink" onclick="openPage('ControlPanel', this, '#1F1F1F')">Control Panel</button>
+            <button class="tablink" onclick="openPage('VPS', this, '#1F1F1F')">VPS Panel</button>
+            <div class="rightTabs">
+                <button class="tablink" onclick="openPage('About', this, '#6B54DA')"><i class="fas fa-question"></i></button>
+                <button class="tablink" onclick="openPage('Changelog', this, '#1F1F1F')"><i class="fas fa-book"></i></button>
+            </div>
+        </div>
+
+        <div id="Home" class="tabcontent">
+            <div class="inBody">
+                <h1>FalixNodes</h1>
+                <p>A quick access to your servers!</p>
+                <p id="version">v0.01</p>
+            </div>
+        </div>
+
+        <div id="Client" class="tabcontent">
+            <a id="openThis" href="https://client.falixnodes.net" target="_blank">Open Client</a>
+            <p>Due to limiations with Discord Auth, you'll need to open this else where.</p>
+        </div>
+
+        <div id="ControlPanel" class="tabcontent">
+            <iframe src="https://gp.falixnodes.net"></iframe>
+        </div>
+
+        <div id="VPS" class="tabcontent">
+            <iframe id="cp" src="https://vps.FalixNodes.net:4083"></iframe>
+        </div>
+
+        <div id="About" class="tabcontent">
+            <iframe src="https://help.falixnodes.net"></iframe>
+        </div>
+
+        <div id="Changelog" class="tabcontent">
+            
+        </div>
+    </body>
+    <script>
+    function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = "#835ee5";
+        }
+        
+        document.getElementById("defaultOpen").click();
+    </script>
+</html>
